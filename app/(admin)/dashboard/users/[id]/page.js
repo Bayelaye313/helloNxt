@@ -16,8 +16,7 @@ export default function UserDetailPage() {
         if (!res.ok) throw new Error("Utilisateur non trouvé !");
         return res.json();
       })
-      .then((data) => setUser(data))
-      .catch(() => router.push("/dashboard/users"));
+      .then((data) => setUser(data));
   }, [params?.id, router]);
 
   if (!user) return <p className="text-center mt-8">Chargement...</p>;
